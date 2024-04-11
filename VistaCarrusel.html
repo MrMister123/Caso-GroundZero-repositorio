@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Menu.html">
+          <img src="img/Logo.webp" alt="GroundZero" width="40" height="35">
+        </a>
+        <a class="navbar-brand" href="Menu.html">Ground Zero</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Menu.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="REGISTER.html">Registro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="VistaArtistas.html">Artistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="VistaMercado.html">Mercado</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Articulos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="VistaCarrusel.html">Pinceles</a></li>
+                <li><a class="dropdown-item" href="VistaCarrusel.html">Pinturas</a></li>
+                <li><a class="dropdown-item" href="VistaCarrusel.html">Atriles</a></li>
+                <li><a class="dropdown-item" href="VistaCarrusel.html">Telas</a></li>
+              </ul>
+            </li>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <div class="position-absolute top-30 end-0">
+              <a class="btn btn-outline-success" href="LOGIN.html" role="button">Inicio Sesion</a>  
+            </div>
+          </ul> 
+        </div>
+      </div>
+    </nav>
+
+
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/pinturas.png" class="estilocarrusel" alt="fondocarrusel">
+      </div>
+      <div class="carousel-item">
+        <img src="img/pinceles.jpg" class="estilocarrusel" alt="fondocarrusel">
+      </div>
+      <div class="carousel-item">
+        <img src="img/telas.webp" class="estilocarrusel" alt="fondocarrusel">
+      </div>
+    </div>
+     
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</body>
+
+<div>  <div class="card" >
+  <img src="img/telas.webp" class="cardventa" alt="...">
+
+  <div class="card-body">
+    <h5 class="card-title">Pinceles</h5>
+ <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Comprar</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">Compra</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+      <label for="pincel">Seleccione el tipo de pincel</label>
+      <select name="pincel" id="pincel">
+        <option value="1">Delgado</option>
+        <option value="2">Grueso</option>
+        <option value="3">Fino</option>
+        <option value="4">Pluma</option>
+      </select>
+      <br>
+      <br>
+      <label for="pincel">Seleccione cantidad</label>
+      <select name="pincel" id="pincel">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <br>
+        <br>
+        <label for="direccion">Ingrese su direccion</label>
+        <textarea name="direccion" id="direccion" cols="30" rows="1"></textarea>
+        <br>
+        <br>
+        <form >
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check1" >
+            <label  class="form-check-label" for="check1">Delgado</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check2" >
+            <label  class="form-check-label" for="check2">grueso</label>
+          </div>
+        </form>
+        <br>
+        <br>
+        <label for="Comentario">Dejanos saber tu opinion</label>
+        <textarea name="Comentario" id="Comentario" cols="60" rows="5"></textarea>
+      </form>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>   
+    </div>
+  </div>
+
+</div></div>
+
+</html>
