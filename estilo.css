@@ -67,3 +67,18 @@
   font-size: 1.2rem;
   padding: 0.05rem 1.25rem;
 }
+
+#text{
+  background-color: rgb(0, 0, 0, 0.75);
+  border: 100px;
+}
+
+#background{
+  background: rgb(144,156,204);
+  background: linear-gradient(0deg, rgba(144,156,204,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+#background2{
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(144,156,204,1) 85%);
+}
