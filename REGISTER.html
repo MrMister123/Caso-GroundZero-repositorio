@@ -20,26 +20,28 @@
       <header>
       </header>
 
-        <form action="Menu.html" method="get">
+        <form action="Menu.html" method="get" id='formulario'>
             <div class="container-sm">
                 <h1 style="text-align: center;">Register</h1>
                 <div class="mb-3">
                     <label for="exampleInputUser1" class="form-label">Nombre de usuario</label>
-                    <input type="user" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" placeholder="Ingresa tu Nombre de usuario" required>
+                    <input type="user" class="form-control" id="user" aria-describedby="userHelp" placeholder="Ingresa tu Nombre de usuario">
                     <div id="userHelp" class="form-text"></div>
                   </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Direccíon de correo</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Direccíon de correo" required>
+                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingresa tu Direccíon de correo">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa tu Contraseña" required>
+                    <input type="password" class="form-control" id="password" placeholder="Ingresa tu Contraseña">
                 </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
+            <p id='error' class="error"></p>
           </div>
         </form>
         <script src="NAVBAR.js"></script>
+        <script src="VALIDACION.js"></script>
     </body>
 </html>

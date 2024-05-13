@@ -1,4 +1,8 @@
 
+ label{
+   width: 320px;
+ }
+ 
  .container{
     height: 150px;
     background-color: brown;
@@ -30,4 +34,9 @@
     background-color: rgb(53, 52, 63);
     color: rgb(235, 235, 235);
     font-size: 25px;
+ }
+
+ #error{
+   color: #FFB3B3;
+   padding-top: 20px;
  }
