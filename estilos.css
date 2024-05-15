@@ -6,6 +6,9 @@ input[type="text"], button {
     margin: 10px;
 }
 
+body{
+    background-color: rgb(182, 182, 182);
+}
 #artworks {
     display: flex;
     flex-wrap: wrap;
