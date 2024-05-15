@@ -1,3 +1,17 @@
+.card {
+  width: 50px;  
+  height: 1000px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid gray;
+}
+
+.card.hovered {
+  transform: scale(1.1);
+}
+
 .fondocard {
   width: 100%;
   height: 100%;

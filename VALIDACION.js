@@ -28,13 +28,15 @@ form.addEventListener('submit', function(evt){
    
     error.innerHTML = mensajesError.join(', ');
 });*/
+$(document).ready(function(){
+    var loggedIn = false;
 
-const user = document.getElementById('user')
-const correo = document.getElementById('correo')
-const pass = document.getElementById('password')
-const form = document.getElementById('formulario')
-const parrafo = document.getElementById('error')
-form.addEventListener("submit", e=>{
+    const user = document.getElementById('user')
+    const correo = document.getElementById('correo')
+    const pass = document.getElementById('password')
+    const form = document.getElementById('formulario')
+    const parrafo = document.getElementById('error')
+    form.addEventListener("submit", e=>{
     e.preventDefault()
     let warnings = ""
     let entrar = false
@@ -57,5 +59,40 @@ form.addEventListener("submit", e=>{
         parrafo.innerHTML = warnings
     }else{
         parrafo.innerHTML = `form validado`
+        loggedIn = true;
+        $('#perfil-icon').show();
     }
+    });
+/*
+    $('#login-btn').click(function(){
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        // Aquí va tu lógica para verificar las credenciales de inicio de sesión.
+        if (username && password) {
+            // Simulamos una sesión iniciada 
+            loggedIn = true;
+            $('#login-form').hide();
+            $('#perfil-icon').show();
+        } else {
+            // aqui salta el mensaje por si los campos esta vacios
+            alert('Por favor, ingresa un nombre de usuario y contraseña.');
+        }
+    });
+*/
+    
+    function checkSession() {
+        if (loggedIn) {
+            // aqui se esconde el icono de inicio de sesion 
+            $('#perfil-icon').show();
+        } else {
+            //  aqui se vuelve al formulario en caso de que estar incorrecto
+            $('#perfil-icon').hide();
+        }
+    }
+
+    // verificacion si ya tiene otra sesion 
+    checkSession();
 });
+
+
