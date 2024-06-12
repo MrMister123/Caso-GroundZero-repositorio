@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    <body>
+
+        <div style=" text-align: center;">
+            <h2>FORMULARIO CRUD PARA USUARIOS</h2>
+            <form action="usuariosAdd" method="POST">
+                {% csrf_token %}
+                {{ form.as_table}}                
+                <input type="submit" name="opcion" value="Agregar">                
+            </form> 
+            <br><br>
+
+            <a href="{% url 'crud_generos' %}"> Volver </a>
+            <br>
+            <div id="idMensajes">
+                {% if mensajes %}
+                {{mensaje}}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from .models import Usuario, Genero
 
-from .models import Usuario,Genero
+from .forms import GeneroForm
 # Create your views here.
 
 def index(request):
@@ -55,3 +57,55 @@ def usuariosAdd(request):
     obj.save()
     context={'mensaje':"Ok, datos grabados..."}
     return render(request, 'usuarios/usuarios_add.html', context)
+
+def usuarios_del(request,pk):
+    context=()
+    try:
+        usuario = Usuario.objects.get(rut=pk)
+
+        usuario.delete()
+        mensaje = "Bien, datos eliminados..."
+        usuarios = Usuario.objects.all()
+        context = {'usuarios': usuarios, 'mensaje': mensaje}
+        return render(request, 'usuarios/usuarios_list.html', context)
+    except:
+        mensaje = "Error, rut no existe..."
+        usuarios = Usuario.objects.all()
+        context = {'usuarios': usuarios, 'mensaje': mensaje}
+        return render(request, 'usuarios/usuarios_list.html', context)
+
+def usuarios_findEdit(request, pk):
+    if pk != "":
+        usuario=Usuario.objects.get(rut=pk)
+        generos=Genero.objects.all()
+        print(type(usuario.id_genero.genero))
+
+        context = {'usuario':usuario, 'generos':generos}
+        if usuario:
+            return render(request, 'usuarios/usuarios_edit.html', context)
+        else:
+            context = {'mensaje':"Error, rut no existe..."}
+            return render(request, 'usuarios/usuarios_list.html', context)
+
+def crud_generos(request):
+    generos = Genero.objects.all()
+    context = {'generos':generos}
+    print("enviando datos generos_list")
+    return render(request, "alumnos/generos_list.html", context)
+
+def generosAdd(request):
+    print("estoy en controlador generosAdd...")
+    context = {}
+
+    if request.method == "POST":
+        print("controlador es un post...")
+        form = GeneroForm(request.POST)
+        if form.is_valid:
+            print("estoy en agregar, is_valid")
+            form.save()
+
+            #limpiar form
+            form = GeneroForm()
+
+            context = {'mensaje':"Ok. datos grabados...","form":form}
+            return render(request, "usuarios/generos_add.html", context)

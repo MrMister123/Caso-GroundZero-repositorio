@@ -10,11 +10,11 @@
     <body>
 
 
-        <h1>EDITAR DATOS DE USUARIOS</h1>
+        <h1>EDITAR DATOS DE GENEROS</h1>
         <br>
 
         <button type="button">
-            <a href="{% url 'usuariosAdd' %}"> Agregar</a>
+            <a href="{% url 'generosAdd' %}"> Agregar</a>
         </button>
     
 
@@ -25,20 +25,16 @@
         </div>
 
         <table>
-            {% if usuarios %}
-                <th>Rut</th>
-                <th>Nombre</th>
-                <th>Apellido P.</th>
+            {% if generos %}
+                <th>Género</th>
                 <th>Eliminar</th>
                 <th>Modificar</th>
-                {% for x in usuarios %}
+                <th>Eliminar</th>                
+                {% for x in generos %}
                     <tr>
-                        <td> {{ x.rut }}
-                        <td> {{ x.nombre }}
-                        <td> {{ x.apellido_paterno }}
-                        <td> <a href="{% url 'usuarios_del' pk=x.rut %}">Eliminar</a>
-                        <td> <a href="{% url 'usuarios_findEdit' pk=x.rut %}">Modificar</a>
-                              
+                        <td> {{ x.genero }}
+                        <td> 
+                        <td>
                     </tr>
                 {% endfor %}
             {% endif %}
