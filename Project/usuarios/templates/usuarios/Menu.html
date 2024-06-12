@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+  <header></header>
+  <div class="card-group">
+    <div class="card" id="miCard">
+      <img src="{% static 'img/3.jpg' %}" class="fondocard">
+      <div class="card-body">
+        <h5 class="card-title">Vincent Van Gogh</h5>
+        <p class="card-text">Artistas</p>
+        <a href="VistaArtistas.html" role="button" class="btn btn-primary">Ir a Artistas</a>
+      </div>
+    </div>
+
+    <div class="card" id="miCard2">
+      <img src="{% static 'img/pinturas.png' %}" class="fondocard">
+      <div class="card-body">
+        <h5 class="card-title">Articulos</h5>
+        <p class="card-text">Pinturas , pinceles,etc</p>
+        <a href="ARTICULO.html" role="button" class="btn btn-primary">Ir al Articulos</a>
+      </div>
+    </div>
+
+    <div class="card" id="miCard3">
+      <img src="{% static '1.jpg' %}" class="fondocard">
+      <div class="card-body">
+        <h5 class="card-title">Cuadros</h5>
+        <p class="card-text">Pintores</p>
+        <a href="VistaMercado.html" role="button" class="btn btn-primary">Ir al mercado</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        // aqui esta la  animación cuando el cursor está sobre la card 
+        $('#miCard').hover(function(){
+            $(this).addClass('hovered');
+        }, function(){
+            $(this).removeClass('hovered');
+        });
+
+        $('#miCard2').hover(function(){
+            $(this).addClass('hovered');
+        }, function(){
+            $(this).removeClass('hovered');
+        });
+
+        $('#miCard3').hover(function(){
+            $(this).addClass('hovered');
+        }, function(){
+            $(this).removeClass('hovered');
+        });
+    });
+  </script>
+  <script type="text/javascript" src="{% static 'scripts/NAVBAR.js' %}"></script>
+</body>
+</html>
