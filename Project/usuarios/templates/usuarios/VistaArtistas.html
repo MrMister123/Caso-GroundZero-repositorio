@@ -10,10 +10,8 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
+{% block content %}
 <body id="background">
-  {% block content %}
-
-  
     <div class="container-fluid">
       <div class="fondoArtistas">
         <a>PAUL CEZANNE </a>
@@ -120,6 +118,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    {% endblock %}
 </body>
+{% endblock %}
 </html>

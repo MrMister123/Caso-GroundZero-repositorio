@@ -38,6 +38,13 @@ def VistaCarrusel(request):
 def Login(request):
     return render(request, 'usuarios/LOGIN.html')
 
+def Articulo(request):
+    return render(request, 'usuarios/ARTICULO.html')
+
+def Carrito(request):
+    return render(request, 'usuarios/CARRITO.html')
+
+
 
 def crud(request):
     usuarios = Usuario.objects.all()
@@ -148,7 +155,7 @@ def crud_generos(request):
     generos = Genero.objects.all()
     context = {'generos':generos}
     print("enviando datos generos_list")
-    return render(request, "alumnos/generos_list.html", context)
+    return render(request, "usuarios/generos_list.html", context)
 
 def generosAdd(request):
     print("estoy en controlador generosAdd...")
@@ -166,3 +173,54 @@ def generosAdd(request):
 
             context = {'mensaje':"Ok. datos grabados...","form":form}
             return render(request, "usuarios/generos_add.html", context)
+        else:
+            form = GeneroForm()
+            context={'form':form}
+            return render(request, 'usuarios/generos_add.html', context)
+        
+def generos_del(request, pk):
+    mensajes=[]
+    errores=[]
+    generos = Genero.object.all()
+    try:
+        genero=Genero.objects.all(id_genero=pk)
+        context={}
+        if genero:
+            genero.delete()
+            mensajes.append("Bien, datos eliminados...")
+            context = {'generos': generos, 'mensajes': mensajes, 'errores':errores}
+            return render(request, 'usuarios/generos_list.html', context)
+    except:
+        print("Error, id no existe...")
+        generos=Genero.objects.all()
+        mensaje="Error, id no existe"
+        context={'mensaje': mensaje,'generos': generos}
+        return render(request, 'usuarios/generos_list.html', context)
+    
+def generos_edit(request, pk):
+    try:
+        genero=Genero.objects.get(id_genero=pk)
+        context={}
+        if genero:
+            print("Edit encontró el género...")
+            if request.method == "POST":
+                print("Edit, es un POST")
+                form = GeneroForm(request.POST, instance=genero)
+                form.save()
+                mensaje="Bien, datos actualizados..."
+                print(mensaje)
+                context = {'genero': genero, 'form': form, 'mensaje': mensaje}
+                return render(request, 'usuarios/generos_edit.html', context)
+            else:
+                print("Edit, NO es un POST")
+                form = GeneroForm(instance=genero)
+                mensaje = "" 
+                context = {'genero': genero, 'form': form, 'mensaje': mensaje}
+                return render(request, 'usuarios/generos_edit.html', context)
+    except:
+        print("Error, id no existe...")
+        generos = Genero.object.all
+        mensaje = "Error, id no existe"
+        context = {'mensaje': mensaje, 'generos': generos}
+        return render(request, 'usuarios/generos_list', context)
+    

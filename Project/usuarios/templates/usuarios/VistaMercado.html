@@ -12,8 +12,9 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
+{% block content %}
 <body id="background2">
-      {% block content %}
+  
       <div>
         <img src="{% static 'img/WARHOL 2.png' %}" class="img">
         <div class="container-fluid">
@@ -21,7 +22,7 @@
             <h4>Cuadro Andy Warhol</h4>
             <h5>Cuadro pintado en oleo por el famoso artista Andy Warhol,</h5>
             </div>
-            <a href="CARRITO.html" role="button" class="btn btn-primary" >Comprar</a>
+            <a href="{% url 'CARRITO' %}" role="button" class="btn btn-primary" >Comprar</a>
       <div>
         <hr>
         <img src="{% static 'img/MANZONI 2.jpg' %}" class="img">
@@ -167,6 +168,6 @@
               </div>
         </div>
       </div>
-      {% endblock %}
 </body>
+{% endblock %}
 </html>
