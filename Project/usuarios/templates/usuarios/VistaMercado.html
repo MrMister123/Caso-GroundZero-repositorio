@@ -1,0 +1,172 @@
+{% extends 'usuarios/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body id="background2">
+      {% block content %}
+      <div>
+        <img src="{% static 'img/WARHOL 2.png' %}" class="img">
+        <div class="container-fluid">
+          <div class="fondoMercado">
+            <h4>Cuadro Andy Warhol</h4>
+            <h5>Cuadro pintado en oleo por el famoso artista Andy Warhol,</h5>
+            </div>
+            <a href="CARRITO.html" role="button" class="btn btn-primary" >Comprar</a>
+      <div>
+        <hr>
+        <img src="{% static 'img/MANZONI 2.jpg' %}" class="img">
+        <div class="container-fluid">
+          <div class="fondoMercado">
+            <h4>Escultura Piero Manzoni</h4>
+            <h5>Escultura echa por el artistas Piero Manzoni</h5>
+          </div>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Comprar</button>
+  
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Compra</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                  <label for="pincel">Seleccione tamaño </label>
+                  <select name="pincel" id="pincel">
+                    <option value="1">800x600</option>
+                    <option value="2">540x360</option>
+                    <option value="3">600x600</option>
+                    <option value="4">240x160</option>
+                  </select>
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese su nombre</label>
+                  <input type="text" name="Nombre" id="nombre">
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese direccion a enviar</label>
+                  <input type="text" name="Nombre" id="direccion">
+                  <br>
+                  <br>
+                    <label for="Comentario">Dejanos saber tu opinion</label>
+                    <textarea name="Comentario" id="Comentario" cols="60" rows="5"></textarea>
+                  </form>
+                </div>
+            
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Pagar</button>
+                </div>
+              </div>
+        </div>
+      </div>
+        </div>
+        <hr>
+      <div>
+        <img src="{% static 'img/KANDINSKI 2.jpg' %}" class="img" alt="Kandinski" height="200px">
+        <div class="container-fluid">
+          <div class="fondoMercado">
+            <h4>Cuadro Vasili Kandinskil</h4>
+            <h5>Cuadro pintado en oleo por el famoso artista Vasili Kandinski</h5>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Comprar</button>
+  
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Compra</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                  <label for="pincel">Seleccione tamaño </label>
+                  <select name="pincel" id="pincel">
+                    <option value="1">800x600</option>
+                    <option value="2">540x360</option>
+                    <option value="3">600x600</option>
+                    <option value="4">240x160</option>
+                  </select>
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese su nombre</label>
+                  <input type="text" name="Nombre" id="nombre">
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese direccion a enviar</label>
+                  <input type="text" name="Nombre" id="direccion">
+                  <br>
+                  <br>
+                    <label for="Comentario">Dejanos saber tu opinion</label>
+                    <textarea name="Comentario" id="Comentario" cols="60" rows="5"></textarea>
+                  </form>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Pagar</button>
+                </div>
+              </div>
+        </div>
+      </div>
+  
+      <div>
+        <img src="{% static 'img/Cezanne 2.jpg' %}" class="img">
+        <div class="container-fluid">
+          <div class="fondoMercado">
+            <h4>Cuadro Paul Cezanne</h4>
+            <h5>Cuadro pintado en oleo por el famoso artista Paul Cezanne</h5>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Comprar</button>
+  
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Compra</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                  <label for="pincel">Seleccione tamaño </label>
+                  <select name="pincel" id="pincel">
+                    <option value="1">800x600</option>
+                    <option value="2">540x360</option>
+                    <option value="3">600x600</option>
+                    <option value="4">240x160</option>
+                  </select>
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese su nombre</label>
+                  <input type="text" name="Nombre" id="nombre">
+                  <br>
+                  <br>
+                  <label for="nombre">Ingrese direccion a enviar</label>
+                  <input type="text" name="Nombre" id="direccion">
+                  <br>
+                  <br>
+                    <label for="Comentario">Dejanos saber tu opinion</label>
+                    <textarea name="Comentario" id="Comentario" cols="60" rows="5"></textarea>
+                  </form>
+                </div>
+            
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Pagar</button>
+                </div>
+              </div>
+        </div>
+      </div>
+      {% endblock %}
+</body>
+</html>

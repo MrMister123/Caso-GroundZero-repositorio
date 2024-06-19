@@ -16,8 +16,28 @@ def listadoSQL(request):
     context={"usuarios":usuarios}
     return render(request, 'usuarios/listadoSQL.html', context)
 
+
 def Menu(request):
     return render(request, 'usuarios/Menu.html')
+
+def VistaArtistas(request):
+    return render(request, 'usuarios/VistaArtistas.html')
+
+def Register(request):
+    return render(request, 'usuarios/REGISTER.html')
+
+def VistaMercado(request):
+    return render(request, 'usuarios/VistaMercado.html')
+
+def Artes(request):
+    return render(request, 'usuarios/artes.html')
+
+def VistaCarrusel(request):
+    return render(request, 'usuarios/VistaCarrusel.html')
+
+def Login(request):
+    return render(request, 'usuarios/LOGIN.html')
+
 
 def crud(request):
     usuarios = Usuario.objects.all()
@@ -59,7 +79,7 @@ def usuariosAdd(request):
     return render(request, 'usuarios/usuarios_add.html', context)
 
 def usuarios_del(request,pk):
-    context=()
+    context={}
     try:
         usuario = Usuario.objects.get(rut=pk)
 
@@ -86,6 +106,43 @@ def usuarios_findEdit(request, pk):
         else:
             context = {'mensaje':"Error, rut no existe..."}
             return render(request, 'usuarios/usuarios_list.html', context)
+
+def usuariosUpdate(request):
+    if request.method == "POST":
+        rut=request.POST["rut"]
+        nombre=request.POST["nombre"]
+        aPaterno=request.POST["paterno"]
+        aMaterno=request.POST["materno"]
+        fechaNac=request.POST["fechaNac"]
+        genero=request.POST["genero"]
+        telefono=request.POST["telefono"]
+        email=request.POST["email"]
+        direccion=request.POST["direccion"]
+        activo="1"
+
+        objGenero=Genero.objects.get(id_genero = genero)
+
+        usuario = Usuario()
+        usuario.rut=rut
+        usuario.nombre=nombre
+        usuario.apellido_paterno=aPaterno
+        usuario.apellido_materno=aMaterno
+        usuario.fecha_nacimiento=fechaNac
+        usuario.id_genero=objGenero
+        usuario.telefono=telefono
+        usuario.email=email
+        usuario.direccion=direccion
+        usuario.activo=1
+        usuario.save()
+
+        generos = Genero.objects.all()
+        context = {'mensaje': "Ok, datos actualizados...", 'generos': 
+                   generos, 'usuario': usuario}
+        return render(request, 'usuarios/usuarios_edit.html', context)
+    else:
+        usuarios = Usuario.objects.all()
+        context = {'usuarios': usuarios}
+        return render(request, 'usuarios/usuarios_list.html', context)
 
 def crud_generos(request):
     generos = Genero.objects.all()

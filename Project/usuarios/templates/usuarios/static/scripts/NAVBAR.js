@@ -1,4 +1,3 @@
-
 const header = document.querySelector("header");
 
 
@@ -6,7 +5,7 @@ header.innerHTML = `
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 <div class="container-fluid">
   <a class="navbar-brand" href="Menu.html">
-    <img src="{% static 'img/Logo.webp' %}" alt="GroundZero" width="40" height="35">
+    <img src="img/Logo.webp" alt="GroundZero" width="40" height="35">
   </a>
   <a class="navbar-brand" href="Menu.html">Ground Zero</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
