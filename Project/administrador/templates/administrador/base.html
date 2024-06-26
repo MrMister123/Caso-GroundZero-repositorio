@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'Menu' %}">Ground Zero</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'Menu' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'REGISTER' %}">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'VistaArtistas' %}">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'VistaMercado' %}">Mercado</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'artes' %}">Obras</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Articulos
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'VistaCarrusel' %}">Pinceles</a></li>
+                    <li><a class="dropdown-item" href="{% url 'VistaCarrusel' %}">Pinturas</a></li>
+                    <li><a class="dropdown-item" href="{% url 'VistaCarrusel' %}">Atriles</a></li>
+                    <li><a class="dropdown-item" href="{% url 'VistaCarrusel' %}">Telas</a></li>
+                    </ul>
+                </li>
+                <ul class="dropdown-menu">
+                    <a class="dropdown-item" href="#">
+                     
+
+                     {% if user.is_authenticated %}
+                         {{user.username}}
+                     {% else %}
+                         <a href=" url 'login' ">login</a>
+                     {% endif %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sessión</a>
+
+                    </div>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <div id="perfil-icon" style="display: none;">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="position-absolute top-30 end-0">
+                    <a class="btn btn-outline-success" href="{% url 'LOGIN' %}" role="button">Inicio Sesion</a>  
+                </div>
+                </ul> 
+            </div>
+            </div>
+        </nav>
+        {% block content %}
+
+        {% endblock %}
+
+
+    </body>
+</html>
