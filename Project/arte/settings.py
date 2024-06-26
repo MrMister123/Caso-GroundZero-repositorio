@@ -69,7 +69,8 @@ TEMPLATES = [
         },
     },
 ]
-LOGIN_REDIRECT_URL ="crudMenu"
+LOGIN_REDIRECT_URL = "crudMenu"
+LOGOUT_REDIRECT_URL = "home"
 WSGI_APPLICATION = 'arte.wsgi.application'
 
 
