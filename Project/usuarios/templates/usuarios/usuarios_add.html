@@ -18,7 +18,7 @@
                 <pre>Apellido P.:       <input type="text" name="paterno"   ></pre>
                 <pre>Apellido M.:       <input type="text" name="materno"   ></pre>
                 <pre>Fecha Nac.:        <input type="date" name="fecNac"    ></pre>
-                <pre>Género:            <select name="Genero">
+                <pre>Género:            <select name="genero">
                     {% for genero in generos %}
                         <option value="{{genero.id_genero}}">{{genero.genero}}</option>
                     {% endfor %}
