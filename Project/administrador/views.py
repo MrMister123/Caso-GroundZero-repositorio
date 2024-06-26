@@ -9,3 +9,7 @@ def menuCrud(request):
     usuario = request.session["usuario"]
     context = {'usuario':usuario}
     return render(request, 'administrador/crudMenu.html', context)
+
+def home(request):
+    context = {}
+    return render(request, 'administrador/home.html', context)

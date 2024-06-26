@@ -51,12 +51,12 @@
                      {% if user.is_authenticated %}
                          {{user.username}}
                      {% else %}
-                         <a href="">
+                         <a href=" url 'login' ">login</a>
                      {% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                        <a class="dropdown-item" href="#">Cerrar sessión</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sessión</a>
 
                     </div>
                 </ul>
