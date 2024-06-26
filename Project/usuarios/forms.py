@@ -5,6 +5,6 @@ from django.forms import ModelForm
 
 class GeneroForm(ModelForm):
     class Meta:
-        Model = Genero
+        model = Genero
         fields = ["genero",]
         labels = {'genero': 'Género',}

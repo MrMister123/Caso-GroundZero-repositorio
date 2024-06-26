@@ -105,6 +105,7 @@ def usuarios_findEdit(request, pk):
     if pk != "":
         usuario=Usuario.objects.get(rut=pk)
         generos=Genero.objects.all()
+
         print(type(usuario.id_genero.genero))
 
         context = {'usuario':usuario, 'generos':generos}
@@ -173,15 +174,15 @@ def generosAdd(request):
 
             context = {'mensaje':"Ok. datos grabados...","form":form}
             return render(request, "usuarios/generos_add.html", context)
-        else:
-            form = GeneroForm()
-            context={'form':form}
-            return render(request, 'usuarios/generos_add.html', context)
+    else:
+        form = GeneroForm()
+        context={'form':form}
+        return render(request, 'usuarios/generos_add.html', context)
         
 def generos_del(request, pk):
     mensajes=[]
     errores=[]
-    generos = Genero.object.all()
+    generos = Genero.objects.all()
     try:
         genero=Genero.objects.all(id_genero=pk)
         context={}
@@ -219,8 +220,7 @@ def generos_edit(request, pk):
                 return render(request, 'usuarios/generos_edit.html', context)
     except:
         print("Error, id no existe...")
-        generos = Genero.object.all
+        generos = Genero.objects.all
         mensaje = "Error, id no existe"
         context = {'mensaje': mensaje, 'generos': generos}
-        return render(request, 'usuarios/generos_list', context)
-    
+        return render(request, 'usuarios/generos_list.html', context)

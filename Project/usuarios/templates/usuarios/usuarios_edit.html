@@ -18,7 +18,7 @@
                 <pre>Nombre:            <input type="text" name="nombre"    value="{{usuario.nombre}}"></pre>
                 <pre>Apellido P.:       <input type="text" name="paterno"   value="{{usuario.apellido_paterno}}"></pre>
                 <pre>Apellido M.:       <input type="text" name="materno"   value="{{usuario.apellido_materno}}"></pre>
-                <pre>Fecha Nac.:        <input type="date" name="fecNac"    value="{{usuario.fecha_nacimiento|date: 'Y-m-d'}}"></pre>
+                <pre>Fecha Nac.:        <input type="date" name="fechaNac"  value="{{usuario.fecha_nacimiento|date:'Y-m-d'}}"></pre>
                 <pre>Género:            <select name="Genero">
                     {% for genero in generos %}
 
