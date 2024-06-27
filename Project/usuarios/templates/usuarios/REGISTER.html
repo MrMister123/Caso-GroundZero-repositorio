@@ -12,7 +12,6 @@
     </head>
     {% block content %}
     <body background="{% static 'img/unnamed.jpg'%}">
-        
         <form action="{% url 'usuarios:Menu' %}" method="get" id='formulario'>
             <div class="container-sm">
                 <h1 style="text-align: center;">Register</h1>
@@ -20,7 +19,7 @@
                     <label for="exampleInputUser1" class="form-label">Nombre de usuario</label>
                     <input type="user" class="form-control" id="user" aria-describedby="userHelp" placeholder="Ingresa tu Nombre de usuario">
                     <div id="userHelp" class="form-text"></div>
-                  </div>
+                </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Direccíon de correo</label>
                     <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingresa tu Direccíon de correo">
@@ -32,7 +31,7 @@
                 </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
             <p id='error' class="error"></p>
-          </div>
+            </div>
         </form>
         <script src="{% static 'scripts/VALIDACION.js' %}"></script>         
     </body>

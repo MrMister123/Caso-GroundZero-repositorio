@@ -96,3 +96,11 @@
   background: rgb(255,255,255);
 background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(144,156,204,1) 85%);
 }
+
+#containerNav{
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  color: azure;
+  border: 3px;
+  border-color: #222;
+}
