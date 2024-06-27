@@ -11,7 +11,7 @@
             
             {% if genero %}
             <h2>FORMULARIO CRUD PARA GÉNEROS</h2><br>
-                <form action="{% url 'usuariosUpdate' %}" method="POST">
+                <form action="{% url 'usuarios:usuariosUpdate' %}" method="POST">
                     {% csrf_token %}
 
                     {{form.as_table}}
@@ -25,7 +25,7 @@
                 {% endif %}
             </div>
             <br><br>
-            <a href="{% url 'crud_generos' %}"> Volver </a>
+            <a href="{% url 'usuarios:crud_generos' %}"> Volver </a>
         </div>
     </body>
 </html>

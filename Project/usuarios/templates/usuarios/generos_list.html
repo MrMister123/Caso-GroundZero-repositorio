@@ -14,7 +14,7 @@
         <br>
 
         <button type="button">
-            <a href="{% url 'generosAdd' %}"> Agregar</a>
+            <a href="{% url 'usuarios:generosAdd' %}"> Agregar</a>
         </button>
     
 
@@ -32,8 +32,8 @@
                 {% for x in generos %}
                     <tr>
                         <td> {{ x.genero }}
-                        <td> <a href="{% url 'generos_del' pk=x.id_genero %}">Eliminar</a>
-                        <td> <a href="{% url 'generos_edit' pk=x.id_genero %}">Modificar</a>
+                        <td> <a href="{% url 'usuarios:generos_del' pk=x.id_genero %}">Eliminar</a>
+                        <td> <a href="{% url 'usuarios:generos_edit' pk=x.id_genero %}">Modificar</a>
                     </tr>
                 {% endfor %}
             {% endif %}

@@ -52,7 +52,7 @@ def crud(request):
     return render(request, 'usuarios/usuarios_list.html', context)
 
 def usuariosAdd(request):
-    if request.method is not "POST":
+    if request.method != "POST":
         generos=Genero.objects.all()
         context={'generos':generos}
         return render(request, 'usuarios/usuarios_add.html', context)

@@ -11,7 +11,7 @@
             
             {% if usuario %}
             <h2>FORMULARIO CRUD PARA USUARIOS</h2>
-            <form action="{% url 'usuariosUpdate' %}" method="POST">
+            <form action="{% url 'usuarios:usuariosUpdate' %}" method="POST">
                 {% csrf_token %}
 
                 <pre>Rut:               <input type="text" name="rut"       value="{{usuario.rut}}"></pre>
@@ -43,7 +43,7 @@
                 {% endif %}
             </div>
             <br><br>
-            <a href="{% url 'crud' %}"> Volver </a>
+            <a href="{% url 'usuarios:crud' %}"> Volver </a>
         </div>
     </body>
 </html>
