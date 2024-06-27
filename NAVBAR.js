@@ -35,21 +35,14 @@ header.innerHTML = `
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="VistaCarrusel.html">Pinceles</a></li>
           <li><a class="dropdown-item" href="VistaCarrusel.html">Pinturas</a></li>
-          <li><a class="dropdown-item" href="VistaCarrusel.html">Atriles</a></li>
-          <li><a class="dropdown-item" href="VistaCarrusel.html">Telas</a></li>
+          <li><a class="dropdown-item" href="VistaCarrusel.html">Disolvente</a></li>
         </ul>
       </li>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
-      <div id="perfil-icon" style="display: none;">
-        <i class="fas fa-user-circle"></i>
-      </div>
-      <div class="position-absolute top-30 end-0">
-        <a class="btn btn-outline-success" href="LOGIN.html" role="button">Inicio Sesion</a>  
-      </div>
-    </ul> 
+
   </div>
 </div>
 </nav>
