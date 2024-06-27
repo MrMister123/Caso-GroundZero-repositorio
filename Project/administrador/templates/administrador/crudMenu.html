@@ -1,17 +1,23 @@
 {% extends 'administrador/base2.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="{% static 'css/crudstyle.css' %}">
+
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
     </head>
-    <body>
-        {% block content %}
+    {% block content %}
+    <body id="background1">
         <tr>
             <td> <a href="{% url 'usuarios:crud' %}">Usuarios</a>
             <td> <a href="{% url 'usuarios:crud_generos' %}">Generos</a>
         </tr>
-        {% endblock %}
     </body>
+    {% endblock %}
 </html>
