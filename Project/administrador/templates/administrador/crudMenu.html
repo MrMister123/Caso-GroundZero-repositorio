@@ -1,3 +1,4 @@
+{% extends 'administrador/base2.html' %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +8,10 @@
     </head>
     <body>
         {% block content %}
-
+        <tr>
+            <td> <a href="{% url 'usuarios:crud' %}">Usuarios</a>
+            <td> <a href="{% url 'usuarios:crud_generos' %}">Generos</a>
+        </tr>
         {% endblock %}
     </body>
 </html>

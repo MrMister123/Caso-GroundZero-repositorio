@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'usuarios:Menu' %}">Ground Zero admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
+                    <ul class="dropdown-menu">
+                        {% if user.is_authenticated %}
+                            {{user.username}}
+                        {% else %}
+                            <a href=" url 'login' ">login</a>
+                        {% endif %}
+                        </a>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sessión</a></li> 
+                    </ul>
+                <div id="perfil-icon" style="display: none;">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            </div>
+        </nav>
+        {% block content %}
+
+        {% endblock %}
+
+
+    </body>
+</html>
