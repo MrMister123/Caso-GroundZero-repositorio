@@ -6,18 +6,50 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="{% static 'css/crudstyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/crudstyle.css' %}">
 
         {% load bootstrap5 %}
         {% bootstrap_css %}
         {% bootstrap_javascript %}
     </head>
     {% block content %}
-    <body id="background1">
-        <tr>
-            <td> <a href="{% url 'usuarios:crud' %}">Usuarios</a>
-            <td> <a href="{% url 'usuarios:crud_generos' %}">Generos</a>
-        </tr>
+    <body id="crudBackground">
+        <div class="card-group">
+            <div class="crudCard" id="crudCard">
+                <img src="{% static 'crudImg/usuarios.png' %}" class=".crudFondocard">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Agregar, modificar, eliminar usuarios</p>
+                    <a href="{% url 'usuarios:crud' %}" role="button" class="btn btn-primary">Ir a usuarios</a>
+                </div>
+            </div>
+
+            <div class="crudCard" id="crudCard2">
+                <img src="{% static 'crudImg/generos.jpg' %}" class="crudFondocard">
+                <div class="card-body">
+                    <h5 class="card-title">Generos</h5>
+                    <p class="card-text">Agregar, modificar, eliminar generos</p>
+                    <a href="{% url 'usuarios:crud_generos' %}" role="button" class="btn btn-primary">Ir al generos</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // aqui esta la  animación cuando el cursor está sobre la card 
+                $('#crudCard').hover(function(){
+                    $(this).addClass('hovered');
+                }, function(){
+                    $(this).removeClass('hovered');
+                });
+
+                $('#crudCard2').hover(function(){
+                    $(this).addClass('hovered');
+                }, function(){
+                    $(this).removeClass('hovered');
+                });
+            });
+        </script>
     </body>
     {% endblock %}
 </html>

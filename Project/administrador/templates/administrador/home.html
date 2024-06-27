@@ -13,11 +13,13 @@
         <title>Home-Iniciar Sesión</title>
     </head>
     {% block content %}
-    <body id="background1">
-       
-        <h1>Página de Inicio</h1><br><br><br>
-        <a href = "{% url 'login' %}">Iniciar Sesión</a>
-        
+    <body id="crudBackground">
+        <div id="containerCrud2">
+            <h1>Página de Inicio</h1><br><br>
+            <button type="button">
+                <a href="{% url 'login' %}">Iniciar Sesión</a>
+            </button>
+        </div>
     </body>
     {% endblock %}
 </html>
