@@ -1,0 +1,48 @@
+#crudBackground{
+    background: rgb(116,160,229);
+    background: linear-gradient(0deg, rgb(94, 143, 221) 45%, rgba(10,88,210,1) 72%);
+    background-attachment: fixed;
+}
+
+#containerCrud{
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    color: azure;
+}
+
+#containerCrud2{
+    height: 550px;
+    width: 700px;
+    background-color: rgb(53, 52, 63);
+    color: rgb(235, 235, 235);
+    font-size: 25px;
+    align-content: center;
+    right: 500px;
+}
+
+.crudCard {
+    width: 951px;  
+    height: 500px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid gray;
+  }
+  
+.crudCard.hovered {
+    transform: scale(1.1);
+}
+  
+.crudFondocard {
+    width: 100%;
+    height: 50%;
+}
+
+.crudImg{
+    float: left;
+    height: 10%;
+    width: 10%;
+    border-radius: 5%;
+    border: black;
+  }
