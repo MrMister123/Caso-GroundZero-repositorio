@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>hol</h1>
+        <br>
+        {% for usuario in usuarios %}
+
+            {{usuario.rut}}, {{usuario.nombre}}, {{usuario.apellido_paterno}},
+            {{usuario.apellido_materno}}, {{usuario.id_genero.genero}} <br>
+        
+        {% endfor %}
+    </body>
+</html>

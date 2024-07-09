@@ -1,0 +1,27 @@
+{% extends 'usuarios/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metropolitan Museum of Art Collection API</title>
+    
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {% block content %}
+    <h1>Buscador de Obras de Arte del Museo Metropolitano de Arte</h1>
+    <input type="text" id="searchInput" placeholder="Introduce una palabra clave">
+    <button onclick="searchArtworks()">Buscar</button>
+    <div id="artworks"></div>
+
+    <script src="{% static 'scripts/api.js' %}"></script> 
+    {% endblock %}
+</body>
+</html>

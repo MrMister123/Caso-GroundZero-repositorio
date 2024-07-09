@@ -1,0 +1,27 @@
+{% extends 'usuarios/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      {% load bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    </head>
+    {% block content %}
+    <body background="{% static 'img/login3.jpeg' %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <div class="container-sm">
+            <h1 style="text-align: center;">Iniciar sesión</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="{% static 'scripts/VALIDACION.js' %}"></script>    
+    </body>
+    {% endblock %}
+</html>

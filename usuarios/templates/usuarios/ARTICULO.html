@@ -1,0 +1,42 @@
+{% extends 'usuarios/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>  
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+      {% load bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+    </head>
+
+    {% block content %}
+    <body background="{% static 'img/1.jpg' %}">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      
+         
+          <div class="container-sm">
+            <center><img src="{% static 'img/MonaLisa.jpg' %}" alt="Mona Lisa"></center>
+            <center><h1>Mona Lisa</h1></center>
+            <center><h2>110.000$</h2></center>
+            <h2>Descripción:</h2>
+            <h6>
+              El retrato de Lisa Gherardini, esposa de Francesco del Giocondo,1​ más conocido como La Gioconda (La Joconde en francés) o Monna Lisa, Lorem ipsum dolor sit amet, 
+              consectetur adipiscing elit. Sed vitae ante diam. Sed ac felis.
+            </h6>
+            
+          </div>
+          <form action="{% url 'usuarios:Menu' %}">
+            <center><div class="form-floating">
+              <textarea class="form-control" placeholder="Deja un comentario aquí." id="floatingTextarea" style="height: 100px" required></textarea>
+              <label for="floatingTextarea">Deja un comentario aquí.</label>
+            </div></center>
+            <div class="container-xxl">
+              <button type="submit" class="btn btn-success btn-lg">Aprobar</button>
+              <button type="submit" class="btn btn-danger btn-lg">Rechazar</button>
+            </div>
+        </form>
+        
+    </body>
+    {% endblock %}
+</html>

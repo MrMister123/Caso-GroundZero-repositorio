@@ -1,0 +1,36 @@
+{% extends 'administrador/base2.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    {% block content %}
+    <body>
+
+        <div style=" text-align: center;">
+            
+            {% if usuario %}
+            <h2>FORMULARIO CRUD PARA USUARIOS</h2>
+            <form action="{% url 'usuarios:usuariosUpdate' %}" method="POST">
+                {% csrf_token %}
+
+                <pre>Rut:               <input type="text" name="rut"       value="{{usuario.rut}}"></pre>
+                <pre>Nombre:            <input type="text" name="nombre"    value="{{usuario.nombre}}"></pre>
+                <pre>Email:     <input type="mail" name="email" value="{{usuario.email}}"></pre>
+                <input type="submit" name="opcion" value="Actualizar">
+                
+            </form> <br><br>
+            {% endif %}
+            <div id="idMensajes">
+                {% if mensajes %}
+                {{mensaje}}
+                {% endif %}
+            </div>
+            <br><br>
+            <a href="{% url 'usuarios:crud' %}"> Volver </a>
+        </div>
+    </body>
+    {% endblock %}
+</html>

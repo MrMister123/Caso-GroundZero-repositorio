@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.producto {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para resaltar el texto */
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho máximo del contenedor del producto */
+    margin: 0 auto; /* Centra horizontalmente el producto */
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+}
+
+#carrito {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+#total-container {
+    margin-top: 20px;
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajusta la altura según tu diseño */
+}
+
+
