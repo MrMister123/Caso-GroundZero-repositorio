@@ -24,7 +24,6 @@
                     <ul class="dropdown-menu">
                         {% if user.is_authenticated %}
                             {{user.username}}
-                            <li><a href="{% url 'administrador:crudMenu' %}">Menu crud</a></li> 
                             <li><a href="{% url 'logout' %}">Cerrar sessión</a></li> 
                         {% else %}
                             <a href = "{% url 'login' %}">Iniciar Sesión</a>

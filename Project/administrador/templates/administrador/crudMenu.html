@@ -23,27 +23,12 @@
                     <a href="{% url 'usuarios:crud' %}" role="button" class="btn btn-primary">Ir a usuarios</a>
                 </div>
             </div>
-
-            <div class="crudCard" id="crudCard2">
-                <img src="{% static 'crudImg/generos.jpg' %}" class="crudFondocard">
-                <div class="card-body">
-                    <h5 class="card-title">Generos</h5>
-                    <p class="card-text">Agregar, modificar, eliminar generos</p>
-                    <a href="{% url 'usuarios:crud_generos' %}" role="button" class="btn btn-primary">Ir al generos</a>
-                </div>
-            </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
                 // aqui esta la  animación cuando el cursor está sobre la card 
                 $('#crudCard').hover(function(){
-                    $(this).addClass('hovered');
-                }, function(){
-                    $(this).removeClass('hovered');
-                });
-
-                $('#crudCard2').hover(function(){
                     $(this).addClass('hovered');
                 }, function(){
                     $(this).removeClass('hovered');

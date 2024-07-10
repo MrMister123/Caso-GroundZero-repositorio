@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'usuarios',
     'bootstrap5',
     'administrador',
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-LOGIN_REDIRECT_URL = "administrador:crudMenu"
+LOGIN_REDIRECT_URL = "usuarios:Menu"
 LOGOUT_REDIRECT_URL = "usuarios:Menu"
 WSGI_APPLICATION = 'arte.wsgi.application'
 
