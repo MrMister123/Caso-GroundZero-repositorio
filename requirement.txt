@@ -1,3 +1,0 @@
-Django==4.1.2
-django-bootstrap5==2.1.0
-django-fontawesome==1.0
