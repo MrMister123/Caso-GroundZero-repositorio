@@ -1,0 +1,26 @@
+{% extends 'usuarios/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'}%">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    {% block content %}
+    <body background="{% static 'img/unnamed.jpg'%}">
+        <form action="{% url 'usuarios:Menu' %}" method="" id='formulario'>
+            <div class="container-sm">
+                <h1 style="text-align: center;">Crear cuenta</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </form>
+    </body>
+    {% endblock %}
+</html>

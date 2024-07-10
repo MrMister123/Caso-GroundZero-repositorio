@@ -29,14 +29,12 @@
             {% if usuarios %}
                 <th>Rut</th>
                 <th>Nombre</th>
-                <th>Apellido P.</th>
                 <th>Eliminar</th>
                 <th>Modificar</th>
                 {% for x in usuarios %}
                     <tr>
                         <td> {{ x.rut }}
                         <td> {{ x.nombre }}
-                        <td> {{ x.apellido_paterno }}
                         <td> <a href="{% url 'usuarios:usuarios_del' pk=x.rut %}">Eliminar</a>
                         <td> <a href="{% url 'usuarios:usuarios_findEdit' pk=x.rut %}">Modificar</a>    
                     </tr>

@@ -18,24 +18,8 @@
 
                 <pre>Rut:               <input type="text" name="rut"       value="{{usuario.rut}}"></pre>
                 <pre>Nombre:            <input type="text" name="nombre"    value="{{usuario.nombre}}"></pre>
-                <pre>Apellido P.:       <input type="text" name="paterno"   value="{{usuario.apellido_paterno}}"></pre>
-                <pre>Apellido M.:       <input type="text" name="materno"   value="{{usuario.apellido_materno}}"></pre>
-                <pre>Fecha Nac.:        <input type="date" name="fechaNac"  value="{{usuario.fecha_nacimiento|date:'Y-m-d'}}"></pre>
-                <pre>Género:            <select name="genero">
-                    {% for genero in generos %}
-
-                        {% if genero.genero == usuario.id_genero.genero %}
-                            <option value="{{genero.id_genero}}">{{genero.genero}}</option>
-                        {% else %}
-                            <option value="{{genero.id_genero}}">{{genero.genero}}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select></pre>
-
-                    <pre>Celular:   <input type="text" name="telefono" value="{{usuario.telefono}}"></pre>
-                    <pre>Email:     <input type="mail" name="email" value="{{usuario.email}}"></pre>
-                    <pre>Dirección: <input type="text" name="direccion" value="{{usuarios.direccion}}"></pre>
-                    <input type="submit" name="opcion" value="Actualizar">
+                <pre>Email:     <input type="mail" name="email" value="{{usuario.email}}"></pre>
+                <input type="submit" name="opcion" value="Actualizar">
                 
             </form> <br><br>
             {% endif %}

@@ -14,23 +14,10 @@
             <h2>FORMULARIO CRUD PARA USUARIOS</h2>
             <form action="{% url 'usuarios:usuariosAdd' %}"   method="POST">
                 {% csrf_token %}
-
                 <pre>Rut:               <input type="text" name="rut"     required></pre>
                 <pre>Nombre:            <input type="text" name="nombre"  required></pre>
-                <pre>Apellido P.:       <input type="text" name="paterno" required></pre>
-                <pre>Apellido M.:       <input type="text" name="materno" required></pre>
-                <pre>Fecha Nac.:        <input type="date" name="fecNac"  required></pre>
-                <pre>Género:            <select name="genero">
-                    {% for genero in generos %}
-                        <option value="{{genero.id_genero}}">{{genero.genero}}</option>
-                    {% endfor %}
-                </select></pre>
-                    <pre>Celular:   <input type="text" name="telefono" required></pre>
-                    <pre>Email:     <input type="mail" name="email" required></pre>
-                    <pre>Dirección: <input type="text" name="direccion" required></pre>
-
-                    <input type="submit" name="opcion" value="Agregar">
-                
+                <pre>Email:     <input type="mail" name="email" required></pre>
+                <input type="submit" name="opcion" value="Agregar">
             </form> <br><br>
             <a href="{% url 'usuarios:crud' %}"> Volver </a>
             <br>
